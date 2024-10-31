@@ -4,24 +4,26 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        experimental-features = "nix-command flakes";
+        # Opinionated: disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+      };
+      channel.enable = false;
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
-    channel.enable = false;
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
 
-  networking.hostName = "Gar";
   networking.networkmanager.enable = true;
   networking.useDHCP = lib.mkDefault true;
 
@@ -65,8 +67,13 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
 
   fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "FiraCode" "Monaspace" ]; })
-];
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "Monaspace"
+      ];
+    })
+  ];
 
   system.stateVersion = "24.11";
 }

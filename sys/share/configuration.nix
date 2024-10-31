@@ -2,16 +2,17 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
-#     ./hardware-configuration.nix
+    #     ./hardware-configuration.nix
     ./core.nix
   ];
 
   nixpkgs = {
     overlays = [
-        (final: prev: {
+      (final: prev: {
         catppuccin-kde-custom = final.catppuccin-kde.override {
           flavour = [ "mocha" ];
           accents = [ "lavender" ];
@@ -27,8 +28,12 @@
   users.users = {
     sia = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [];
-      extraGroups = ["networkmanager" "wheel" "adbusers"];
+      openssh.authorizedKeys.keys = [ ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "adbusers"
+      ];
       packages = with pkgs; [
         catppuccin-kde-custom
         beauty-line-icon-theme
@@ -36,13 +41,13 @@
     };
   };
 
-  services.syncthing = {
-    enable = true;
-    user = "sia";
-    configDir = "/home/sia/.config/syncthing";
-    dataDir = "/home/sia/Documents";
-    guiAddress = "127.0.0.1:8384";
-  };
+  #   services.syncthing = {
+  #     enable = true;
+  #     user = "sia";
+  #     configDir = "/home/sia/.config/syncthing";
+  #     dataDir = "/home/sia/Documents";
+  #     guiAddress = "127.0.0.1:8384";
+  #   };
 
   programs.adb.enable = true;
 
