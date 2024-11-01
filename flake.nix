@@ -46,7 +46,7 @@
           };
           modules = [
             ./sys/share/configuration.nix
-            ./sys/gar/hardware.nix
+            ./sys/gar/configuration.nix
             home-manager.nixosModules.home-manager
 
             {
@@ -69,7 +69,7 @@
           };
           modules = [
             ./sys/share/configuration.nix
-            ./sys/quetz/hardware.nix
+            ./sys/quetz/configuration.nix
             home-manager.nixosModules.home-manager
 
             {

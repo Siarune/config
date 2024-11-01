@@ -6,7 +6,6 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    #     ./hardware-configuration.nix
     ./core.nix
   ];
 
@@ -33,6 +32,7 @@
         "networkmanager"
         "wheel"
         "adbusers"
+        "docker"
       ];
       packages = with pkgs; [
         catppuccin-kde-custom

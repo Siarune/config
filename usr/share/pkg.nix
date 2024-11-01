@@ -14,17 +14,45 @@
     nil
     nixfmt-rfc-style
     pnpm
+	pinentry-qt
+	appimage-run
+	polychromatic
 
-    keepassxc
-    bitwarden-desktop
-    joplin-desktop
+	heroic
+	prismlauncher
+	discord
+	vesktop
+	lutris
+	wine
+	q4wine
+	ryujinx
+	nexusmods-app
 
-    obsidian
-    thunderbird
-    libreoffice-qt6-fresh
-    ungoogled-chromium
+	nodejs_20
+	temurin-bin-8
+	nil
+	pnpm
+	docker
+	ventoy-full
+	unrar
 
-    anki
+
+
+	anki
+	bitwarden-desktop
+# 	calibre
+# 	kdePackages.falkon
+	krita
+	freecad
+	libreoffice-qt6-fresh
+# 	nextcloud-client
+	joplin-desktop
+	mpv
+	obsidian
+	thunderbird
+	ungoogled-chromium
+	qbittorrent
+# 	kdePackages.kdevelop
   ];
 
   programs = {
@@ -98,31 +126,47 @@
     # };
     # };
 
-    vscode = {
-      enable = true;
-      package = pkgs.vscode-fhs;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
+	vscode = {
+		enable = true;
+		package = pkgs.vscode-fhs;
+		enableUpdateCheck = false;
+		enableExtensionUpdateCheck = false;
 
-      userSettings = {
-        "workbench.colorTheme" = "Catppuccin Mocha";
-        "workbench.iconTheme" = "catppuccin-mocha";
-        "editor.defaultFormatter" = "prettier";
-        "indentRainbow.indicatorStyle" = "light";
-        "gitlens.currentLine.enabled" = false;
-      };
+		userSettings = {
+			"workbench.colorTheme" = "Catppuccin Mocha";
+			"workbench.iconTheme" = "catppuccin-mocha";
+			"editor.fontFamily" = "'MonaspiceAr Nerd Font Mono', 'monospace', monospace";
+			"editor.defaultFormatter" = "prettier";
+			"editor.formatOnSave" = true;
+			"files.autoSave" = "afterDelay";
+			"prettier.useTabs" = true;
+			"prettier.tabWidth" = 4;
+			"indentRainbow.indicatorStyle" = "light";
+			"gitlens.currentLine.enabled" = false;
+			"workbench.startupEditor" = "none";
+			"git.confirmSync" = false;
+			"[typescript]" = {
+				"editor.defaultFormatter" = "esbenp.prettier-vscode";
+			};
+			"[typescriptreact]" = {
+				"editor.defaultFormatter" = "esbenp.prettier-vscode";
+			};
+			"[markdown]" = {
+				"editor.defaultFormatter" = "esbenp.prettier-vscode";
+			};
+		};
 
-      extensions = with pkgs.vscode-extensions; [
-        yoavbls.pretty-ts-errors
-        dbaeumer.vscode-eslint
-        esbenp.prettier-vscode
-        denoland.vscode-deno
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
-        oderwat.indent-rainbow
-        eamodio.gitlens
-      ];
-    };
+		extensions = with pkgs.vscode-extensions; [
+			yoavbls.pretty-ts-errors
+			dbaeumer.vscode-eslint
+			esbenp.prettier-vscode
+			denoland.vscode-deno
+			catppuccin.catppuccin-vsc
+			catppuccin.catppuccin-vsc-icons
+			oderwat.indent-rainbow
+			eamodio.gitlens
+		];
+	};
 
     spicetify =
       let
@@ -145,6 +189,31 @@
         colorScheme = "mocha";
       };
 
+      gpg = {
+		enable = true;
+	};
+
+	git = {
+		enable = true;
+		userName = "siarune";
+		userEmail = "aidan.sharp@siarune.dev";
+# 		signing = {
+# 			signByDefault = true;
+# # 			key = "0xD65110839D02609F";
+#             key = null;
+# 		};
+
+	delta.enable = true;
+	};
+
+	gitui.enable = true;
+
   };
+
+  services.gpg-agent = {
+	enable = true;
+	pinentryPackage = pkgs.pinentry-qt;
+	enableNushellIntegration = true;
+};
 
 }
