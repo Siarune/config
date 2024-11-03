@@ -12,17 +12,18 @@ def "nb" [
 
 # Dry build
 def "nb build" [] {
-	sudo nixos-rebuild build
+	sudo nixos-rebuild build --quiet
 }
 
 # Build and activate
 def "nb switch" [
 	--test (-t) # Don't preserve activation
 ] {
+	cleanBackupFiles
 	if $test {
-		sudo nixos-rebuild test
+		sudo nixos-rebuild test --quiet
 	} else {
-		sudo nixos-rebuild switch
+		sudo nixos-rebuild switch --quiet
 	}
 }
 
@@ -32,14 +33,31 @@ def "nb upgrade" [
 	cd /etc/nixos
 	sudo flake update
 	cd
-	sudo nixos-rebuild switch
+	nb switch
 }
 
 # Clean up old generations
 def "nb gc" [
-	depth = 0
+	depth = '+7d'
 ] {
-	sudo nix-env --delete-generations +$depth
-	sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +$depth
-	sudo nix-store --gc
+	print 'cleaning userspace...'
+	sudo nix-env --delete-generations $depth --quiet
+	print 'cleaning system...'
+	sudo nix-env -p /nix/var/nix/profiles/system --delete-generations $depth --quiet
+	sudo nix-store --gc --quiet
+}
+
+const dirsToCheck = [
+	~/.mozilla/firefox/sia
+]
+
+def "cleanBackupFiles" [] {
+	$dirsToCheck | each {|d| cd $d ; ls -a | where name =~ '\.bk' | each {|e| rm $e.name }}
+}
+
+# Search nixpkgs
+def "nb search" [
+	pkg: string # Package to search for
+] {
+	nix search nixpkgs $pkg --quiet
 }
