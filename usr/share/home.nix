@@ -21,6 +21,11 @@
     sessionPath = [
       "$HOME/.local/bin"
     ];
+    sessionVariables = {
+      EDITOR = "\'hx\'";
+      PNPM_HOME = ".local/bin";
+    };
+    #     shellAliases = {};
 
     file = {
       "scripts" = {
@@ -28,27 +33,27 @@
         target = ".local/share/scripts";
       };
       "userchrome" = {
-			source = ./userchrome/chrome;
-			target = ".mozilla/firefox/sia/chrome";
-		};
+        source = ./userchrome/chrome;
+        target = ".mozilla/firefox/sia/chrome";
+      };
     };
   };
 
-#   gtk.catppuccin = {
-# 	enable = true;
-# 	flavor = "mocha";
-# 	accent = "lavendar";
-# 	tweaks = ["rimless" "black"];
-# };
-#
-# qt.style.catppuccin = {
-# 	enable = true;
-# 	apply = true;
-# 	flavor = "mocha";
-# 	accent = "lavendar";
-# };
+  #   gtk.catppuccin = {
+  # 	enable = true;
+  # 	flavor = "mocha";
+  # 	accent = "lavendar";
+  # 	tweaks = ["rimless" "black"];
+  # };
+  #
+  # qt.style.catppuccin = {
+  # 	enable = true;
+  # 	apply = true;
+  # 	flavor = "mocha";
+  # 	accent = "lavendar";
+  # };
 
-
+  programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
   home.stateVersion = "25.05";
 }

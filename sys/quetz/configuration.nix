@@ -1,13 +1,14 @@
-{...}: {
+{ ... }:
+{
 
-imports = [
-	./hardware.nix
+  imports = [
+    ./hardware.nix
 
-];
+  ];
 
-hardware.openrazer = {
+  hardware.openrazer = {
     enable = true;
-    users = ["sia"];
+    users = [ "sia" ];
   };
 
   virtualisation.docker.enable = true;

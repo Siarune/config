@@ -31,7 +31,7 @@ def "nb switch" [
 def "nb upgrade" [
 ] {
 	cd /etc/nixos
-	sudo flake update
+	sudo nix flake update
 	cd
 	nb switch
 }
