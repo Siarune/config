@@ -86,6 +86,29 @@
             }
           ];
         };
+        Flint = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./sys/share/configuration.nix
+            ./sys/flint/configuration.nix
+            home-manager.nixosModules.home-manager
+
+            {
+              home-manager = {
+                extraSpecialArgs = {
+                  inherit inputs outputs;
+                };
+                backupFileExtension = "bk";
+                users.sia.imports = [
+                  ./usr/share/home.nix
+                  ./usr/flint/home.nix
+                ];
+              };
+            }
+          ];
+        };
       };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
 
