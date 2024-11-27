@@ -28,6 +28,11 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # Ignores wakeup call from NVME device that keeps it from suspending
+  services.udev.extraRules = ''
+  ACTION=="add" SUBSYSTEM=="pci" ATTR{vendor}=="0x1022" ATTR{device}=="0x1483" ATTR{power/wakeup}="disabled"
+'';
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/7f9ef1f3-96c6-4e26-848d-16b338bd9ded";
     fsType = "ext4";
