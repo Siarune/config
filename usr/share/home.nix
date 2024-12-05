@@ -32,10 +32,6 @@
         source = ./scripts;
         target = ".local/share/scripts";
       };
-      "userchrome" = {
-        source = ./userchrome/chrome;
-        target = ".mozilla/firefox/sia/chrome";
-      };
     };
   };
 

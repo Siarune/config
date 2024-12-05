@@ -134,6 +134,7 @@
 
       search.default = "Qwant";
       search.privateDefault = "Qwant";
+      search.force = true;
       search.engines = {
 
         "Nix Packages" = {
