@@ -64,7 +64,7 @@
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
   boot.binfmt.registrations.appimage = {
     wrapInterpreterInShell = false;
