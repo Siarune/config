@@ -40,29 +40,6 @@
     {
       nixosConfigurations = {
 
-        Gar = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [
-            ./sys/share/configuration.nix
-            ./sys/gar/configuration.nix
-            home-manager.nixosModules.home-manager
-
-            {
-              home-manager = {
-                extraSpecialArgs = {
-                  inherit inputs outputs;
-                };
-                backupFileExtension = "bk";
-                users.sia.imports = [
-                  ./usr/share/home.nix
-                  ./usr/gar/home.nix
-                ];
-              };
-            }
-          ];
-        };
         Quetz = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
@@ -86,6 +63,7 @@
             }
           ];
         };
+
         Flint = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
