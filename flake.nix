@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Catppuccin colors
-    # 	catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix";
 
     # Plasma Manager
     plasma-manager = {
@@ -32,6 +32,7 @@
       home-manager,
       plasma-manager,
       spicetify-nix,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -48,6 +49,7 @@
             ./sys/share/configuration.nix
             ./sys/quetz/configuration.nix
             home-manager.nixosModules.home-manager
+            catppuccin.nixosModules.catppuccin
 
             {
               home-manager = {
@@ -58,6 +60,7 @@
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/quetz/home.nix
+                  catppuccin.homeManagerModules.catppuccin
                 ];
               };
             }

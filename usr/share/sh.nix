@@ -251,7 +251,7 @@
       enable = true;
       # 		defaultEditor = true;
       settings = {
-        theme = "catppuccin_mocha";
+        #         theme = "catppuccin_mocha";
         keys.normal = {
           space.w = ":w";
           space.q = ":q";

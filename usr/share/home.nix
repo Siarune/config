@@ -35,19 +35,11 @@
     };
   };
 
-  #   gtk.catppuccin = {
-  # 	enable = true;
-  # 	flavor = "mocha";
-  # 	accent = "lavendar";
-  # 	tweaks = ["rimless" "black"];
-  # };
-  #
-  # qt.style.catppuccin = {
-  # 	enable = true;
-  # 	apply = true;
-  # 	flavor = "mocha";
-  # 	accent = "lavendar";
-  # };
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "lavender";
+  };
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
