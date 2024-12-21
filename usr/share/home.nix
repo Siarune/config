@@ -22,8 +22,8 @@
       "$HOME/.local/bin"
     ];
     sessionVariables = {
-      EDITOR = "\'hx\'";
-      PNPM_HOME = ".local/bin";
+      EDITOR = "hx";
+      PNPM_HOME = "/home/sia/.local/bin";
     };
     #     shellAliases = {};
 
