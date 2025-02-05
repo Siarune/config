@@ -61,3 +61,12 @@ def "nb search" [
 ] {
 	nix search nixpkgs $pkg --quiet
 }
+
+# Execute commands without installing
+def "nx" [
+	pkg: string
+	args?: string
+] {
+	let cmd = [$pkg, $args] | str join ' '
+	nix-shell -p $pkg --run $cmd
+}
