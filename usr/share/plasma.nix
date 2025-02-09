@@ -1,4 +1,5 @@
 {
+pkgs,
   inputs,
   ...
 }:
@@ -30,10 +31,18 @@
 
     workspace = {
       theme = "CatppuccinMochaLavender";
-      # 		iconTheme = "";
-      splashScreen.theme = "none";
+#       lookAndFeel = "Catppuccin-Mocha-Lavender";
+      colorScheme = "CatppuccinMochaLavender";
+#       iconTheme = "Breeze";
+      cursor.theme = "BeautyLine";
+#       splashScreen.engine = "None";
+      splashScreen.theme = "None";
       windowDecorations.library = "org.kde.kwin.aurorae";
       windowDecorations.theme = "__aurorae__svg__CatppuccinMocha-Classic";
+      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/MilkyWay/contents/images/5120x2880.png";
+
+      enableMiddleClickPaste = true;
+      clickItemTo = "open";
     };
 
     kwin = {
@@ -87,6 +96,15 @@
         ];
       }
     ];
+
+
+    file = {
+
+      ".config/klipperrc".General = {
+        SyncClipboards.value = true;
+      };
+
+    };
   };
 
   programs.konsole = {
@@ -120,6 +138,18 @@
       };
       indent.showLines = true;
     };
+  };
+
+  programs.ghostwriter = {
+    enable = true;
+    font = {
+        family = "MonaspiceAr Nerd Font Mono";
+        pointSize = 12;
+      };
+      general.fileSaving = {
+        autoSave = true;
+      };
+      spelling.liveSpellCheck = true;
   };
 
 }
