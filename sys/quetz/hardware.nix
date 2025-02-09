@@ -63,14 +63,14 @@
       fsType = "auto";
     };
 
-    "/mnt/womp" = {
-      device = "/dev/disk/by-partlabel/womp";
-      fsType = "auto";
+    "/mnt/s1" = {
+      device = "/dev/disk/by-label/s1";
+      fsType = "ext4";
     };
 
-    "/mnt/exp" = {
-      device = "/dev/disk/by-label/exp";
-      fsType = "auto";
+    "/mnt/s2" = {
+      device = "/dev/disk/by-label/s2";
+      fsType = "ext4";
     };
 
   };
