@@ -137,19 +137,28 @@ pkgs,
         flashMatching = true;
       };
       indent.showLines = true;
+
+    };
+    lsp.customServers = {
+      "nix" = {
+        "command" = [ "nixd" ];
+        "url" = "https://github.com/nix-community-nixd";
+        "highlightingModeRegex" = "^Nix$";
+        "formatting.command" = "nixfmt";
+      };
     };
   };
 
   programs.ghostwriter = {
     enable = true;
     font = {
-        family = "MonaspiceAr Nerd Font Mono";
-        pointSize = 12;
-      };
-      general.fileSaving = {
-        autoSave = true;
-      };
-      spelling.liveSpellCheck = true;
+      family = "MonaspiceAr Nerd Font Mono";
+      pointSize = 12;
+    };
+    general.fileSaving = {
+      autoSave = true;
+    };
+    spelling.liveSpellCheck = true;
   };
 
 }

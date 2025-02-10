@@ -40,6 +40,7 @@
         pinentry-qt
         appimage-run
         nil
+        nixd
         nixfmt-rfc-style
       ];
     };
