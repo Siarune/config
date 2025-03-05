@@ -4,7 +4,7 @@
     ./pkg.nix
     ./sh.nix
     ./plasma.nix
-    ./firefox.nix
+    ./browser.nix
   ];
 
   nixpkgs = {
@@ -36,11 +36,11 @@
     };
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "lavender";
-  };
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "lavender";
+    };
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

@@ -1,5 +1,5 @@
 {
-pkgs,
+  pkgs,
   inputs,
   ...
 }:
@@ -31,11 +31,11 @@ pkgs,
 
     workspace = {
       theme = "CatppuccinMochaLavender";
-#       lookAndFeel = "Catppuccin-Mocha-Lavender";
+      #       lookAndFeel = "Catppuccin-Mocha-Lavender";
       colorScheme = "CatppuccinMochaLavender";
-#       iconTheme = "Breeze";
+      #       iconTheme = "Breeze";
       cursor.theme = "BeautyLine";
-#       splashScreen.engine = "None";
+      #       splashScreen.engine = "None";
       splashScreen.theme = "None";
       windowDecorations.library = "org.kde.kwin.aurorae";
       windowDecorations.theme = "__aurorae__svg__CatppuccinMocha-Classic";
@@ -96,7 +96,6 @@ pkgs,
         ];
       }
     ];
-
 
     file = {
 
