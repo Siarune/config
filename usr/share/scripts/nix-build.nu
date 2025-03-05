@@ -49,6 +49,7 @@ def "nb gc" [
 
 const dirsToCheck = [
 	~/.mozilla/firefox/sia
+	~/.librewolf/sia
 ]
 
 def "cleanBackupFiles" [] {
