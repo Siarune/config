@@ -12,36 +12,36 @@
   home.packages = with pkgs; [
     #     kdePackages.qtstyleplugin-kvantum
 
-    pnpm
-    bottom
-
-    discord
-    vesktop
-    wine
-    q4wine
-    #     nexusmods-app
-
-    nodejs_20
-    temurin-bin-8
+    # Dev tools
     docker
-    ventoy-full
-    unrar
+    marksman
+    nodejs_20
+    pnpm
+    temurin-bin-8
 
+    # Social
+    vesktop
+    revolt-desktop
+
+    # Utils
+    bottom
+    mpv
+    q4wine
+    qbittorrent
+    unrar
+    ventoy-full
+    wine
+
+    # Productivity
     anki
     bitwarden-desktop
-    # 	calibre
-    # 	kdePackages.falkon
     krita
-
     libreoffice-qt6-fresh
-    # 	nextcloud-client
-    joplin-desktop
-    mpv
-    #     obsidian
+    logisim-evolution
+    obsidian
     thunderbird
     ungoogled-chromium
-    qbittorrent
-    # 	kdePackages.kdevelop
+    zotero
   ];
 
   programs = {
