@@ -264,7 +264,7 @@
 
       languages = {
         language-server.nil = with pkgs.nil; {
-          command = "nil";
+          command = "nixd";
         };
 
         language-server.typescript-language-server = with pkgs.nodePackages; {

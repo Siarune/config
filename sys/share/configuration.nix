@@ -39,8 +39,9 @@
         beauty-line-icon-theme
         pinentry-qt
         appimage-run
-        nil
+        nixd
         nixfmt-rfc-style
+        kubo # ipfs
       ];
     };
   };
