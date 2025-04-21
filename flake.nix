@@ -58,7 +58,7 @@
                 extraSpecialArgs = {
                   inherit inputs outputs;
                 };
-                backupFileExtension = "bk";
+                backupFileExtension = "bak";
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/quetz/home.nix
@@ -83,7 +83,7 @@
                 extraSpecialArgs = {
                   inherit inputs outputs;
                 };
-                backupFileExtension = "bk";
+                backupFileExtension = "bak";
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/flint/home.nix
