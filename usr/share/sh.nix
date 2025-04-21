@@ -1,13 +1,9 @@
 {
-  inputs,
   lib,
   pkgs,
   ...
 }:
 {
-
-  # imports = [inputs.catppuccin.homeManagerModules.catppuccin];
-
   programs = {
 
     bash = {
@@ -263,7 +259,7 @@
       };
 
       languages = {
-        language-server.nil = with pkgs.nil; {
+        language-server.nixd = with pkgs.nixd; {
           command = "nixd";
         };
 

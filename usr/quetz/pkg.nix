@@ -4,17 +4,18 @@
   home.packages = with pkgs; [
     polychromatic
 
-    freecad
-    logisim-evolution
-
-    ryujinx
+    # Fun
+    bottles
     heroic
-    prismlauncher
     lutris
     scarab
     protonup-qt
     godot_4
     #     nexusmods-app-unfree
+    prismlauncher
+    protonup-qt
+    ryujinx
+    scarab
     bottles
 
     obs-studio

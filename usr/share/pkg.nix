@@ -25,6 +25,7 @@
     unrar
     zed-editor
 
+    # Productivity
     anki
     bitwarden-desktop
     calibre

@@ -23,6 +23,7 @@
     sessionVariables = {
       EDITOR = "hx";
       PNPM_HOME = "/home/sia/.local/bin";
+      NIXD_FLAGS = "--log=error";
     };
     #     shellAliases = {};
 
@@ -34,11 +35,11 @@
     };
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "lavender";
-  };
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "lavender";
+    };
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

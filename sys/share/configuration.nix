@@ -36,7 +36,7 @@
       ];
       packages = with pkgs; [
         catppuccin-kde-custom
-        beauty-line-icon-theme
+        #         beauty-line-icon-theme
         pinentry-qt
         appimage-run
         nixd
@@ -63,9 +63,9 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "lavender";
-  };
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "lavender";
+    };
 }

@@ -1,5 +1,5 @@
 {
-pkgs,
+  pkgs,
   inputs,
   ...
 }:
@@ -31,11 +31,11 @@ pkgs,
 
     workspace = {
       theme = "CatppuccinMochaLavender";
-#       lookAndFeel = "Catppuccin-Mocha-Lavender";
+      #       lookAndFeel = "Catppuccin-Mocha-Lavender";
       colorScheme = "CatppuccinMochaLavender";
-#       iconTheme = "Breeze";
+      #       iconTheme = "Breeze";
       cursor.theme = "BeautyLine";
-#       splashScreen.engine = "None";
+      #       splashScreen.engine = "None";
       splashScreen.theme = "None";
       windowDecorations.library = "org.kde.kwin.aurorae";
       windowDecorations.theme = "__aurorae__svg__CatppuccinMocha-Classic";
@@ -97,7 +97,6 @@ pkgs,
       }
     ];
 
-
     file = {
 
       ".config/klipperrc".General = {
@@ -137,19 +136,28 @@ pkgs,
         flashMatching = true;
       };
       indent.showLines = true;
+
+    };
+    lsp.customServers = {
+      "nix" = {
+        "command" = [ "nixd" ];
+        "url" = "https://github.com/nix-community-nixd";
+        "highlightingModeRegex" = "^Nix$";
+        "formatting.command" = "nixfmt";
+      };
     };
   };
 
   programs.ghostwriter = {
     enable = true;
     font = {
-        family = "MonaspiceAr Nerd Font Mono";
-        pointSize = 12;
-      };
-      general.fileSaving = {
-        autoSave = true;
-      };
-      spelling.liveSpellCheck = true;
+      family = "MonaspiceAr Nerd Font Mono";
+      pointSize = 12;
+    };
+    general.fileSaving = {
+      autoSave = true;
+    };
+    spelling.liveSpellCheck = true;
   };
 
 }
