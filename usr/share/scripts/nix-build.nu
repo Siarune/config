@@ -19,7 +19,6 @@ def "nb build" [] {
 def "nb switch" [
 	--test (-t) # Don't preserve activation
 ] {
-	cleanBackupFiles
 	if $test {
 		sudo nixos-rebuild test --quiet
 	} else {
@@ -45,14 +44,6 @@ def "nb gc" [
 	print 'cleaning system...'
 	sudo nix-env -p /nix/var/nix/profiles/system --delete-generations $depth --quiet
 	sudo nix-store --gc --quiet
-}
-
-const dirsToCheck = [
-	~/.mozilla/firefox/sia
-]
-
-def "cleanBackupFiles" [] {
-	$dirsToCheck | each {|d| cd $d ; ls -a | where name =~ '\.bk' | each {|e| rm $e.name }}
 }
 
 # Search nixpkgs
