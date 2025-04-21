@@ -13,27 +13,13 @@
     lutris
     scarab
     protonup-qt
+    godot_4
     #     nexusmods-app-unfree
-
-    obs-studio
-
-    qbittorrent
-    tor-browser
-
     bottles
 
-    jetbrains.webstorm
-
-    qtcreator
-    kdePackages.kdevelop
-    kdePackages.full
-    gcc
-    gnumake
-    cmake
-    cmake-format
-    qbs
-    kdePackages.kirigami
-
+    obs-studio
+    qbittorrent
+    tor-browser
     inputs.zen-browser.packages."${system}".default
   ];
 

@@ -10,38 +10,31 @@
   ];
 
   home.packages = with pkgs; [
-    #     kdePackages.qtstyleplugin-kvantum
-
-    pnpm
     bottom
-
-    discord
     vesktop
+
     wine
     q4wine
     #     nexusmods-app
 
+    pnpm
     nodejs_20
+    oxlint
     temurin-bin-8
-    docker
     ventoy-full
     unrar
+    zed-editor
 
     anki
     bitwarden-desktop
-    # 	calibre
-    # 	kdePackages.falkon
+    calibre
     krita
-
     libreoffice-qt6-fresh
-    # 	nextcloud-client
-    joplin-desktop
+    obsidian
     mpv
-    #     obsidian
     thunderbird
     ungoogled-chromium
-    qbittorrent
-    # 	kdePackages.kdevelop
+    tidal-hifi
   ];
 
   programs = {
@@ -65,6 +58,9 @@
         "gitlens.currentLine.enabled" = false;
         "workbench.startupEditor" = "none";
         "git.confirmSync" = false;
+        "typescript.updateImportsOnFileMove.enabled" = "always";
+        "terminal.integrated.defaultLocation" = "editor";
+        "terminal.integrated.stickyScroll.enabled" = true;
         "[typescript]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
@@ -73,6 +69,9 @@
         };
         "[markdown]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[nix]" = {
+          "editor.defaultFormatter" = "jnoortheen.nix-ide";
         };
       };
 
@@ -96,11 +95,16 @@
         enable = true;
         enabledExtensions = with spicePkgs.extensions; [
           adblock
+          betterGenres
           bookmark
           copyToClipboard
           fullAppDisplay
-          hidePodcasts
+          history
           shuffle
+        ];
+        enabledCustomApps = with spicePkgs.apps; [
+          newReleases
+          localFiles
         ];
         theme = spicePkgs.themes.catppuccin;
         colorScheme = "mocha";
