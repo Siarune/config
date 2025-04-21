@@ -4,7 +4,6 @@
     ./pkg.nix
     ./sh.nix
     ./plasma.nix
-    ./firefox.nix
   ];
 
   nixpkgs = {
