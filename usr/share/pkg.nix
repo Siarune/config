@@ -35,6 +35,7 @@
     mpv
     thunderbird
     ungoogled-chromium
+    inputs.zen-browser.packages."${system}".default
     tidal-hifi
   ];
 

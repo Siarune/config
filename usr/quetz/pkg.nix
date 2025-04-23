@@ -21,7 +21,6 @@
     obs-studio
     qbittorrent
     tor-browser
-    inputs.zen-browser.packages."${system}".default
   ];
 
 }
