@@ -1,4 +1,4 @@
-{ ... }:
+{ StateVersion, ... }:
 {
   imports = [
     ./pkg.nix
@@ -35,13 +35,13 @@
     };
   };
 
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      accent = "lavender";
-    };
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "lavender";
+  };
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
-  home.stateVersion = "24.11";
+  home.stateVersion = StateVersion;
 }

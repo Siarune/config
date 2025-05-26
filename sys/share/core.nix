@@ -3,6 +3,7 @@
   lib,
   config,
   pkgs,
+  StateVersion,
   ...
 }:
 {
@@ -49,7 +50,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -75,14 +75,9 @@
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Monaspace"
-      ];
-    })
+  fonts.packages = with pkgs.nerd-fonts; [
+    monaspace
   ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = StateVersion;
 }

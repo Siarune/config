@@ -2,10 +2,10 @@
   description = "Sia's NixOS configuration";
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Catppuccin colors
@@ -18,12 +18,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Spotify with *spice*
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
@@ -32,20 +26,21 @@
       self,
       nixpkgs,
       home-manager,
-      plasma-manager,
-      spicetify-nix,
       catppuccin,
+      plasma-manager,
+      zen-browser,
       ...
     }@inputs:
     let
       inherit (self) outputs;
+      StateVersion = "25.05";
     in
     {
       nixosConfigurations = {
 
         Quetz = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs outputs StateVersion;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -56,13 +51,13 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit inputs outputs;
+                  inherit inputs outputs StateVersion;
                 };
                 backupFileExtension = "bak";
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/quetz/home.nix
-                  catppuccin.homeManagerModules.catppuccin
+                  catppuccin.homeModules.catppuccin
                 ];
               };
             }
