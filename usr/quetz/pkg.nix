@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
 
   home.packages = with pkgs; [
@@ -21,7 +21,6 @@
     obs-studio
     qbittorrent
     tor-browser
-    inputs.zen-browser.packages."${system}".default
   ];
 
 }

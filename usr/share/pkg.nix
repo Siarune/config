@@ -4,9 +4,8 @@
   ...
 }:
 {
-
-  imports = [
-    inputs.spicetify-nix.homeManagerModules.default
+  imports = with inputs; [
+    zen-browser.homeModules.twilight
   ];
 
   home.packages = with pkgs; [
