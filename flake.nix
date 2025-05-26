@@ -66,7 +66,7 @@
 
         Flint = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs outputs StateVersion;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -76,7 +76,7 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit inputs outputs;
+                  inherit inputs outputs StateVersion;
                 };
                 backupFileExtension = "bak";
                 users.sia.imports = [
