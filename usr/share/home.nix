@@ -21,7 +21,6 @@
       "$HOME/.local/bin"
     ];
     sessionVariables = {
-      EDITOR = "hx";
       PNPM_HOME = "/home/sia/.local/bin";
       NIXD_FLAGS = "--log=error";
     };
