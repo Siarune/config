@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     bottom
     vesktop
+    revolt-desktop
 
     wine
     q4wine
@@ -30,6 +31,8 @@
     calibre
     krita
     libreoffice-qt6-fresh
+    zotero
+    pandoc
     obsidian
     mpv
     thunderbird
@@ -51,6 +54,11 @@
     };
 
     gitui.enable = true;
+
+    zen-browser = {
+      enable = true;
+      nativeMessagingHosts = [ pkgs.firefoxpwa ];
+    };
 
   };
 
