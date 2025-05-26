@@ -11,7 +11,7 @@
     scarab
     protonup-qt
     godot_4
-    #     nexusmods-app-unfree
+    nexusmods-app-unfree
     prismlauncher
     protonup-qt
     ryujinx
