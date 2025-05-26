@@ -31,11 +31,8 @@
 
     workspace = {
       theme = "CatppuccinMochaLavender";
-      #       lookAndFeel = "Catppuccin-Mocha-Lavender";
       colorScheme = "CatppuccinMochaLavender";
-      #       iconTheme = "Breeze";
       cursor.theme = "BeautyLine";
-      #       splashScreen.engine = "None";
       splashScreen.theme = "None";
       windowDecorations.library = "org.kde.kwin.aurorae";
       windowDecorations.theme = "__aurorae__svg__CatppuccinMocha-Classic";
@@ -99,13 +96,13 @@
 
     file = {
 
-      ".config/klipperrc".General = {
-        SyncClipboards.value = true;
-      };
+      #   ".config/klipperrc".General = {
+      #     SyncClipboards.value = true;
+      #   };
 
+      # };
     };
   };
-
   programs.konsole = {
     enable = true;
     defaultProfile = "sia";
@@ -146,18 +143,6 @@
         "formatting.command" = "nixfmt";
       };
     };
-  };
-
-  programs.ghostwriter = {
-    enable = true;
-    font = {
-      family = "MonaspiceAr Nerd Font Mono";
-      pointSize = 12;
-    };
-    general.fileSaving = {
-      autoSave = true;
-    };
-    spelling.liveSpellCheck = true;
   };
 
 }
