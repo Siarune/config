@@ -12,27 +12,20 @@
   programs.plasma = {
     enable = true;
 
-    input.keyboard = {
-      options = [
-        "caps:escape_shifted_capslock"
-      ];
-      #         layouts = [
-      # 			{
-      # 				layout = "us";
-      # 				variant = "eng";
-      # 			}
-      # 			{
-      # 				"layout" = "us";
-      # 				variant = "dvorak";
-      # 			}
-      #         ];
-      numlockOnStartup = "on";
+    input = {
+      keyboard = {
+        options = [
+          "caps:escape_shifted_capslock"
+        ];
+      };
+      mice = {
+        naturalScroll = true;
+      };
     };
 
     workspace = {
       theme = "CatppuccinMochaLavender";
       colorScheme = "CatppuccinMochaLavender";
-      cursor.theme = "BeautyLine";
       splashScreen.theme = "None";
       windowDecorations.library = "org.kde.kwin.aurorae";
       windowDecorations.theme = "__aurorae__svg__CatppuccinMocha-Classic";
@@ -93,15 +86,6 @@
         ];
       }
     ];
-
-    file = {
-
-      #   ".config/klipperrc".General = {
-      #     SyncClipboards.value = true;
-      #   };
-
-      # };
-    };
   };
   programs.konsole = {
     enable = true;
@@ -123,7 +107,6 @@
     editor = {
       font = {
         family = "MonaspiceAr Nerd Font Mono";
-        # 			weight = "light";
         pointSize = 10;
       };
 
