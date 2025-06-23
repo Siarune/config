@@ -40,6 +40,7 @@
         pinentry-qt
         appimage-run
         nixd
+        package-version-server
         nixfmt-rfc-style
         nh
         kubo # ipfs
