@@ -13,14 +13,21 @@
     enable = true;
 
     input = {
-      keyboard = {
-        options = [
-          "caps:escape_shifted_capslock"
-        ];
-      };
-      mice = {
-        naturalScroll = true;
-      };
+      keyboard.options = [
+        "caps:escape_shifted_capslock"
+      ];
+
+      mice = [
+        {
+          name = "Razer Basilisk V2";
+          vendorId = "1532";
+          productId = "0085";
+          enable = true;
+          naturalScroll = true;
+          accelerationProfile = "default";
+        }
+      ];
+
     };
 
     workspace = {
