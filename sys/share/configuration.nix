@@ -36,7 +36,6 @@
       ];
       packages = with pkgs; [
         catppuccin-kde-custom
-        #         beauty-line-icon-theme
         pinentry-qt
         appimage-run
         nixd
