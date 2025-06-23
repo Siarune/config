@@ -48,14 +48,6 @@
     };
   };
 
-  #   services.syncthing = {
-  #     enable = true;
-  #     user = "sia";
-  #     configDir = "/home/sia/.config/syncthing";
-  #     dataDir = "/home/sia/Documents";
-  #     guiAddress = "127.0.0.1:8384";
-  #   };
-
   programs.adb.enable = true;
 
   programs.steam = {
