@@ -142,8 +142,6 @@
         			]
         		}
 
-        		source /home/sia/.local/share/scripts/nix-build.nu
-
         		'';
 
     };
