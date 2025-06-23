@@ -5,7 +5,7 @@
 }:
 {
   imports = with inputs; [
-    zen-browser.homeModules.twilight
+    zen-browser.homeModules.beta
   ];
 
   home.packages = with pkgs; [
@@ -38,6 +38,7 @@
     thunderbird
     ungoogled-chromium
     tidal-hifi
+    firefoxpwa
   ];
 
   programs = {
@@ -58,6 +59,12 @@
     zen-browser = {
       enable = true;
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
+      policies = {
+        DisableAppUpdate = true;
+        NoDefaultBookmarks = true;
+        OfferToSaveLogins = false;
+        AutofillCreditCardEnabled = false;
+      };
     };
 
   };
