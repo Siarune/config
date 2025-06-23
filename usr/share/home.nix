@@ -26,13 +26,6 @@
       DXVK_CONFIG_FILE = "/home/sia/.config/dxvk.conf";
     };
     #     shellAliases = {};
-
-    file = {
-      "scripts" = {
-        source = ./scripts;
-        target = ".local/share/scripts";
-      };
-    };
   };
 
   catppuccin = {
