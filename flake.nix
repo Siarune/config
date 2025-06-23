@@ -27,8 +27,6 @@
       nixpkgs,
       home-manager,
       catppuccin,
-      plasma-manager,
-      zen-browser,
       ...
     }@inputs:
     let
@@ -46,8 +44,6 @@
             ./sys/share/configuration.nix
             ./sys/quetz/configuration.nix
             home-manager.nixosModules.home-manager
-            catppuccin.nixosModules.catppuccin
-
             {
               home-manager = {
                 extraSpecialArgs = {
@@ -72,7 +68,6 @@
             ./sys/share/configuration.nix
             ./sys/flint/configuration.nix
             home-manager.nixosModules.home-manager
-
             {
               home-manager = {
                 extraSpecialArgs = {

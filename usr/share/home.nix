@@ -25,7 +25,6 @@
       NIXD_FLAGS = "--log=error";
       DXVK_CONFIG_FILE = "/home/sia/.config/dxvk.conf";
     };
-    #     shellAliases = {};
   };
 
   catppuccin = {
