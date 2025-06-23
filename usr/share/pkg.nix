@@ -21,7 +21,7 @@
     nodejs_20
     oxlint
     temurin-bin-8
-    ventoy-full
+    # ventoy-full
     unrar
     zed-editor
 
@@ -49,7 +49,8 @@
     git = {
       enable = true;
       userName = "siarune";
-      userEmail = "aidan.sharp@siarune.dev";
+      userEmail = "asharp@siarune.dev";
+      signing.signByDefault = true;
 
       delta.enable = true;
     };
