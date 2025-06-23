@@ -16,6 +16,10 @@
       enable = true;
       shellAliases = {
         ".." = "cd ..";
+        "nhb" = "nh os build /etc/nixos";
+        "nhs" = "nh os switch /etc/nixos";
+        "nht" = "nh os test /etc/nixos";
+        "nhu" = "nh os switch -u /etc/nixos";
       };
       extraConfig = ''
 

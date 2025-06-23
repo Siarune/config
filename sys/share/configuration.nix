@@ -41,6 +41,7 @@
         appimage-run
         nixd
         nixfmt-rfc-style
+        nh
         kubo # ipfs
       ];
     };
