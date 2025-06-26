@@ -13,7 +13,7 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_xanmod_latest;
+    kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_6_15;
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
 
