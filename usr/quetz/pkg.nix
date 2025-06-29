@@ -4,19 +4,10 @@
   home.packages = with pkgs; [
     polychromatic
 
-    # Fun
-    bottles
-    heroic
     lutris
-    scarab
-    protonup-qt
-    godot_4
-    nexusmods-app-unfree
     prismlauncher
-    protonup-qt
+    temurin-bin-8
     ryujinx
-    scarab
-    bottles
 
     obs-studio
     qbittorrent
