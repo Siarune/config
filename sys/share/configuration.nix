@@ -44,6 +44,7 @@
         nh
         kubo # ipfs
       ];
+      shell = pkgs.nushell;
     };
   };
 
