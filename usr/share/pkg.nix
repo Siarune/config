@@ -13,10 +13,6 @@
     vesktop
     revolt-desktop
 
-    wine
-    q4wine
-    #     nexusmods-app
-
     pnpm
     nodejs_20
     oxlint

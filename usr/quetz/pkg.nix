@@ -8,10 +8,6 @@
     bottles
     heroic
     lutris
-    scarab
-    protonup-qt
-    godot_4
-    nexusmods-app-unfree
     prismlauncher
     protonup-qt
     ryujinx
