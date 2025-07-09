@@ -1,15 +1,17 @@
 {
   description = "Sia's NixOS configuration";
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    # Catppuccin colors
+    catppuccin.url = "github:catppuccin/nix";
+
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Catppuccin colors
-    catppuccin.url = "github:catppuccin/nix";
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Plasma Manager
     plasma-manager = {
@@ -25,6 +27,7 @@
     {
       self,
       nixpkgs,
+      chaotic,
       home-manager,
       catppuccin,
       ...
@@ -44,6 +47,9 @@
             ./sys/share/configuration.nix
             ./sys/quetz/configuration.nix
             home-manager.nixosModules.home-manager
+            chaotic.nixosModules.nyx-cache
+            chaotic.nixosModules.nyx-overlay
+            chaotic.nixosModules.nyx-registry
             {
               home-manager = {
                 extraSpecialArgs = {

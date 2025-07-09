@@ -7,7 +7,7 @@
   ];
 
   hardware.openrazer = {
-    enable = false; # TODO: Re-Enable when stable on new kernel
+    enable = true;
     users = [ "sia" ];
   };
 
