@@ -10,6 +10,10 @@
     obs-studio
     qbittorrent
     tor-browser
+
+    sabnzbd
+    sonarr
+    radarr
   ];
 
 }

@@ -12,4 +12,9 @@
 
   virtualisation.docker.enable = true;
 
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
 }
