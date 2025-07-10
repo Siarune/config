@@ -34,6 +34,11 @@
       enableBashIntegration = true;
       enableNushellIntegration = true;
       nix-direnv.enable = true;
+
+      config = {
+        hide_env_diff = true;
+        load_env = true;
+      };
     };
 
     helix = {
