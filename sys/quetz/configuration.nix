@@ -6,9 +6,8 @@
 
   ];
 
-  hardware.openrazer = {
+  services.hardware.openrgb = {
     enable = true;
-    users = [ "sia" ];
   };
 
   virtualisation.docker.enable = true;

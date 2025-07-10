@@ -2,8 +2,6 @@
 {
 
   home.packages = with pkgs; [
-    polychromatic
-
     lutris
     prismlauncher
     temurin-bin-8
