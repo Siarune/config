@@ -39,6 +39,33 @@
     {
       nixosConfigurations = {
 
+        Calla = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs StateVersion;
+          };
+          modules = [
+            ./sys/share/configuration.nix
+            ./sys/calla/configuration.nix
+            home-manager.nixosModules.home-manager
+            chaotic.nixosModules.nyx-cache
+            chaotic.nixosModules.nyx-overlay
+            chaotic.nixosModules.nyx-registry
+            {
+              home-manager = {
+                extraSpecialArgs = {
+                  inherit inputs outputs StateVersion;
+                };
+                backupFileExtension = "bak";
+                users.sia.imports = [
+                  ./usr/share/home.nix
+                  ./usr/calla/home.nix
+                  catppuccin.homeModules.catppuccin
+                ];
+              };
+            }
+          ];
+        };
+
         Quetz = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs StateVersion;
