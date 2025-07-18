@@ -13,15 +13,9 @@
     vesktop
     revolt-desktop
 
-    wine
-    q4wine
-    #     nexusmods-app
-
     pnpm
     nodejs_20
     oxlint
-    temurin-bin-8
-    # ventoy-full
     unrar
     zed-editor
 
@@ -35,13 +29,13 @@
     pandoc
     obsidian
     mpv
-    thunderbird
     ungoogled-chromium
     tidal-hifi
     firefoxpwa
   ];
 
   programs = {
+
     gpg = {
       enable = true;
     };

@@ -13,7 +13,7 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_6_15;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
 
@@ -21,11 +21,10 @@
       kernelModules = [ ];
       availableKernelModules = [
         "nvme"
-        "xhci_pci"
         "ahci"
+        "xhci_pci"
+        "thunderbolt"
         "usbhid"
-        "usb_storage"
-        "sd_mod"
       ];
     };
 
@@ -75,8 +74,9 @@
 
   };
 
-  networking.hostName = "Quetz";
-  # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
+  networking.hostName = "Calla";
+  networking.useDHCP = lib.mkDefault true;
+  hardware.bluetooth.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

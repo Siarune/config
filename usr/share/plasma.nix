@@ -102,7 +102,6 @@
     };
 
     profiles.sia = {
-      command = "/home/sia/.nix-profile/bin/nu";
       colorScheme = "CatppuccinMocha";
       font.name = "MonaspiceAr Nerd Font Mono";
       font.size = 12;
