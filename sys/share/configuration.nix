@@ -11,6 +11,7 @@
 
   nixpkgs = {
     overlays = [
+      inputs.millennium.overlays.default
       (final: prev: {
         catppuccin-kde-custom = final.catppuccin-kde.override {
           flavour = [ "mocha" ];
@@ -52,6 +53,7 @@
 
   programs.steam = {
     enable = true;
+    package = pkgs.steam-millennium;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
