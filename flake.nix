@@ -2,7 +2,7 @@
   description = "Sia's NixOS configuration";
   inputs = {
     # Catppuccin colors
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
