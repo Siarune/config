@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     lutris
     prismlauncher
-    temurin-bin-8
+    temurin-bin-21
     ryujinx
 
     obs-studio
