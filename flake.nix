@@ -86,6 +86,7 @@
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/flint/home.nix
+                  catppuccin.homeModules.catppuccin
                 ];
               };
             }
