@@ -24,7 +24,7 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ tuxedo-drivers ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ tuxedo-drivers ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/71c7c3e6-ff7e-41a1-a802-ecb7ae2b3463";
@@ -50,6 +50,7 @@
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   hardware.bluetooth.enable = true;
+  # hardware.tuxedo-drivers.enable = true;
 
   networking.hostName = "Flint";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
