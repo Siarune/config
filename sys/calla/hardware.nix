@@ -5,12 +5,15 @@
   modulesPath,
   ...
 }:
-
+let
+  kernel = pkgs.linuxPackages_cachyos.kernel;
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  system.modulesTree = [ (lib.getOutput "modules" kernel) ];
   boot = {
     loader.systemd-boot.enable = true;
     kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
