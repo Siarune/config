@@ -4,6 +4,7 @@
     # Catppuccin colors
     catppuccin.url = "github:catppuccin/nix/release-25.05";
 
+    # Nyx packages
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Home manager
@@ -38,6 +39,7 @@
     let
       inherit (self) outputs;
       StateVersion = "25.05";
+      backupFileExtension = "bak";
     in
     {
       nixosConfigurations = {
@@ -56,9 +58,13 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit inputs outputs StateVersion;
+                  inherit
+                    inputs
+                    outputs
+                    StateVersion
+                    backupFileExtension
+                    ;
                 };
-                backupFileExtension = "bak";
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/calla/home.nix
@@ -80,9 +86,13 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit inputs outputs StateVersion;
+                  inherit
+                    inputs
+                    outputs
+                    StateVersion
+                    backupFileExtension
+                    ;
                 };
-                backupFileExtension = "bak";
                 users.sia.imports = [
                   ./usr/share/home.nix
                   ./usr/flint/home.nix
