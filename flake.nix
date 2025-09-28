@@ -38,6 +38,7 @@
     }@inputs:
     let
       inherit (self) outputs;
+      me = "sia";
       StateVersion = "25.05";
       backupFileExtension = "bak";
     in
@@ -61,6 +62,7 @@
                   inherit
                     inputs
                     outputs
+                    me
                     StateVersion
                     backupFileExtension
                     ;
@@ -89,6 +91,7 @@
                   inherit
                     inputs
                     outputs
+                    me
                     StateVersion
                     backupFileExtension
                     ;

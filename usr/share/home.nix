@@ -1,4 +1,4 @@
-{ StateVersion, ... }:
+{ StateVersion, me, ... }:
 {
   imports = [
     ./pkg.nix
@@ -15,15 +15,15 @@
   };
 
   home = {
-    username = "sia";
-    homeDirectory = "/home/sia";
+    username = me;
+    homeDirectory = "/home/${me}";
     sessionPath = [
       "$HOME/.local/bin"
     ];
     sessionVariables = {
-      PNPM_HOME = "/home/sia/.local/bin";
+      PNPM_HOME = "/home/${me}/.local/bin";
       NIXD_FLAGS = "--log=error";
-      DXVK_CONFIG_FILE = "/home/sia/.config/dxvk.conf";
+      DXVK_CONFIG_FILE = "/home/${me}/.config/dxvk.conf";
     };
   };
 
