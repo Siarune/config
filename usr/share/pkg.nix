@@ -21,16 +21,13 @@
 
     # Productivity
     anki
-    bitwarden-desktop
     calibre
     krita
     libreoffice-qt6-fresh
     zotero
-    pandoc
     obsidian
     mpv
     ungoogled-chromium
-    tidal-hifi
     firefoxpwa
   ];
 
