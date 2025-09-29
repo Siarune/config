@@ -18,6 +18,20 @@
           accents = [ "lavender" ];
           winDecStyles = [ "classic" ];
         };
+
+        # yt6801p = final.yt6801 {
+        #   url = "https://github.com/h4rm00n/yt6801-linux-driver/archive/refs/heads/main.zip";
+        #   sha256 = "";
+        # };
+
+        yt6801 = prev.yt6801.overrideAttrs (old: {
+          src = prev.fetchFromGitHub {
+            owner = "h4rm00n";
+            repo = "yt6801-linux-driver";
+            rev = "36bfc255f1ad7fc1796652612a4f10e7487d4c82";
+            hash = "";
+          };
+        });
       })
     ];
     config = {
