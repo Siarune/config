@@ -74,10 +74,6 @@
       enable = true;
       shellAliases = {
         ".." = "cd ..";
-        "nhb" = "nh os build /etc/nixos";
-        "nhs" = "nh os switch /etc/nixos";
-        "nht" = "nh os test /etc/nixos";
-        "nhu" = "nh os switch -u /etc/nixos";
       };
       extraConfig = ''
             $env.config = {
@@ -118,6 +114,56 @@
                   		cmd: "z ~"
             		}
             	}
+             	{
+              		name: nix_build
+                	modifier: control
+                 	keycode: char_b
+                  	mode: [emacs, vi_insert]
+                  	event: {
+                   		send: executehostcommand,
+                 		cmd: "nh os build /etc/nixos"
+                   }
+                }
+                {
+                	name: nix_switch
+                  	modifier: control
+                   	keycode: char_s
+                    	mode: [emacs, vi_insert]
+                    	event: {
+                     		send: executehostcommand,
+                   		cmd: "nh os switch /etc/nixos"
+                     }
+                  }
+                  {
+                  		name: nix_test
+                    	modifier: control
+                     	keycode: char_t
+                      	mode: [emacs, vi_insert]
+                      	event: {
+                       		send: executehostcommand,
+                     		cmd: "nh os test /etc/nixos"
+                       }
+                    }
+                    {
+                    	name: nix_upgrade
+                      	modifier: control
+                       	keycode: char_u
+                        	mode: [emacs, vi_insert]
+                        	event: {
+                         		send: executehostcommand,
+                       		cmd: "nh os switch -u /etc/nixos"
+                         }
+                    }
+                    {
+                    	name: nix_clean
+                      	modifier: control
+                       	keycode: char_g
+                        	mode: [emacs, vi_insert]
+                        	event: {
+                         		send: executehostcommand,
+                       		cmd: "nh clean all"
+                         }
+                    }
              	]
         	}
       '';
