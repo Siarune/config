@@ -43,7 +43,6 @@
         package-version-server
         nixfmt-rfc-style
         nh
-        kubo # ipfs
       ];
       shell = pkgs.nushell;
     };
