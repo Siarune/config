@@ -12,7 +12,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Steam homebrew
-    millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=next";
+    millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
 
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
