@@ -14,7 +14,7 @@
     revolt-desktop
 
     pnpm
-    nodejs_20
+    nodejs
     oxlint
     unrar
     zed-editor
