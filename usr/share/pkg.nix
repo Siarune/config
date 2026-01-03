@@ -42,10 +42,9 @@
       userName = "siarune";
       userEmail = "asharp@siarune.dev";
       signing.signByDefault = true;
-
-      delta.enable = true;
     };
 
+    delta.enable = true;
     gitui.enable = true;
 
     zen-browser = {
