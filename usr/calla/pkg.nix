@@ -5,7 +5,7 @@
     lutris
     prismlauncher
     temurin-bin-21
-    ryujinx
+    ryubing
 
     obs-studio
     qbittorrent
