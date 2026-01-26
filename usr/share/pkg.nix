@@ -39,8 +39,10 @@
 
     git = {
       enable = true;
-      userName = "siarune";
-      userEmail = "asharp@siarune.dev";
+      settings = {
+        user.name = "siarune";
+        user.email = "asharp@siarune.dev";
+      };
       signing.signByDefault = true;
     };
 
