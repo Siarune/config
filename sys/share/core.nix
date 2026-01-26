@@ -3,7 +3,6 @@
   lib,
   config,
   pkgs,
-  StateVersion,
   ...
 }:
 {
@@ -80,5 +79,4 @@
     monaspace
   ];
 
-  system.stateVersion = StateVersion;
 }

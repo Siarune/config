@@ -1,4 +1,4 @@
-{ StateVersion, me, ... }:
+{ username, ... }:
 {
   imports = [
     ./pkg.nix
@@ -15,15 +15,15 @@
   };
 
   home = {
-    username = me;
-    homeDirectory = "/home/${me}";
+    username = username;
+    homeDirectory = "/home/${username}";
     sessionPath = [
       "$HOME/.local/bin"
     ];
     sessionVariables = {
-      PNPM_HOME = "/home/${me}/.local/bin";
+      PNPM_HOME = "/home/${username}/.local/bin";
       NIXD_FLAGS = "--log=error";
-      DXVK_CONFIG_FILE = "/home/${me}/.config/dxvk.conf";
+      DXVK_CONFIG_FILE = "/home/${username}/.config/dxvk.conf";
     };
   };
 
@@ -35,5 +35,4 @@
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
-  home.stateVersion = StateVersion;
 }

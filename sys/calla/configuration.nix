@@ -18,4 +18,6 @@
     openFirewall = true;
   };
 
+  system.stateVersion = "25.05";
+
 }

@@ -38,8 +38,7 @@
     }@inputs:
     let
       inherit (self) outputs;
-      me = "sia";
-      StateVersion = "25.05";
+      username = "sia";
       backupFileExtension = "bak";
     in
     {
@@ -47,7 +46,7 @@
 
         Calla = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs StateVersion;
+            inherit inputs outputs;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -62,8 +61,7 @@
                   inherit
                     inputs
                     outputs
-                    me
-                    StateVersion
+                    username
                     backupFileExtension
                     ;
                 };
@@ -79,7 +77,7 @@
 
         Flint = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs StateVersion;
+            inherit inputs outputs;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -91,8 +89,7 @@
                   inherit
                     inputs
                     outputs
-                    me
-                    StateVersion
+                    username
                     backupFileExtension
                     ;
                 };
