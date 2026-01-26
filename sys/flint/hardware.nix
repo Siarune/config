@@ -29,6 +29,7 @@
       "mem_sleep_default=deep"
     ];
 
+    extraModulePackages = with config.boot.kernelPackages; [ yt6801 ];
     resumeDevice = "/dev/disk/by-uuid/71c7c3e6-ff7e-41a1-a802-ecb7ae2b3463";
   };
 
