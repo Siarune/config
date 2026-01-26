@@ -25,9 +25,11 @@
     kernelParams = [
       "acpi.ec_no_wakeup=1" # Fixes ACPI wakeup issues
       "amdgpu.dcdebugmask=0x10" # Fixes Wayland slowdowns/freezes
+      "resume_offset=6475776" # Hibernation resume point to root offset
+      "mem_sleep_default=deep"
     ];
 
-    # extraModulePackages = with config.boot.kernelPackages; [ yt6801 ];
+    resumeDevice = "/dev/disk/by-uuid/71c7c3e6-ff7e-41a1-a802-ecb7ae2b3463";
   };
 
   fileSystems = {
@@ -50,6 +52,16 @@
       fsType = "ext4";
     };
   };
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024;
+    }
+  ];
+
+  powerManagement.enable = true;
+  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
 
   networking.hostName = "Flint";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
