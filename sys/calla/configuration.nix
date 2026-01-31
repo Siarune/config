@@ -8,7 +8,6 @@
 
   services.hardware.openrgb = {
     enable = true;
-    package = pkgs.openrgb_git;
   };
 
   virtualisation.docker.enable = true;
