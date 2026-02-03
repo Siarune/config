@@ -121,7 +121,7 @@
                   	mode: [emacs, vi_insert]
                   	event: {
                    		send: executehostcommand,
-                 		cmd: "nh os build /etc/nixos"
+                 		cmd: "nh os build"
                    }
                 }
                 {
@@ -131,7 +131,7 @@
                     	mode: [emacs, vi_insert]
                     	event: {
                      		send: executehostcommand,
-                   		cmd: "nh os switch /etc/nixos"
+                   		cmd: "nh os switch"
                      }
                   }
                   {
@@ -141,7 +141,7 @@
                       	mode: [emacs, vi_insert]
                       	event: {
                        		send: executehostcommand,
-                     		cmd: "nh os test /etc/nixos"
+                     		cmd: "nh os test"
                        }
                     }
                     {
@@ -151,7 +151,7 @@
                         	mode: [emacs, vi_insert]
                         	event: {
                          		send: executehostcommand,
-                       		cmd: "nh os switch -u /etc/nixos"
+                       		cmd: "nh os switch -u"
                          }
                     }
                     {

@@ -42,7 +42,6 @@
         nixd
         package-version-server
         nixfmt-rfc-style
-        nh
       ];
       shell = pkgs.nushell;
     };
@@ -56,5 +55,14 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+  };
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 1 --keep-since 3d";
+    };
+    flake = "/etc/nixos";
   };
 }
