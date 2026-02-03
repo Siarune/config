@@ -29,6 +29,7 @@
     mpv
     ungoogled-chromium
     firefoxpwa
+    bitwarden-desktop
   ];
 
   programs = {
@@ -41,9 +42,13 @@
       enable = true;
       settings = {
         user.name = "siarune";
-        user.email = "asharp@siarune.dev";
+        user.email = "sia@rune.nz";
       };
-      signing.signByDefault = true;
+      signing = {
+        format = "ssh";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB71Rii0ysJ8MnvC0BMbU/uFegBnbqH3GNkFwc/XfKPx";
+        signByDefault = true;
+      };
     };
 
     delta.enable = true;

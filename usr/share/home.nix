@@ -24,6 +24,7 @@
       PNPM_HOME = "/home/${username}/.local/bin";
       NIXD_FLAGS = "--log=error";
       DXVK_CONFIG_FILE = "/home/${username}/.config/dxvk.conf";
+      SSH_AUTH_SOCK = "/home/${username}/.bitwarden-ssh-agent.sock";
     };
   };
 
