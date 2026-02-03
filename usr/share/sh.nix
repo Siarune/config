@@ -164,6 +164,26 @@
                        		cmd: "nh clean all"
                          }
                     }
+                    {
+                    	name: yazi
+                      	modifier: alt
+                       	keycode: char_y
+                        	mode: [emacs, vi_insert]
+                        	event: {
+                         		send: executehostcommand,
+                       		cmd: "yy"
+                         }
+                    }
+                    {
+                    	name: helix
+                      	modifier: alt
+                       	keycode: char_i
+                        	mode: [emacs, vi_insert]
+                        	event: {
+                         		send: executehostcommand,
+                       		cmd: "hx"
+                         }
+                    }
              	]
         	}
       '';
@@ -217,8 +237,8 @@
     };
 
     yazi = {
-    	enable = true;
-    	enableNushellIntegration = true;
+      enable = true;
+      enableNushellIntegration = true;
     };
 
     zoxide = {
