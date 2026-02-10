@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  env,
   ...
 }:
 {
@@ -63,6 +64,6 @@
       enable = true;
       extraArgs = "--keep 1 --keep-since 3d";
     };
-    flake = "/etc/nixos";
+    flake = env.nix;
   };
 }

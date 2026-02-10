@@ -1,4 +1,4 @@
-{ username, ... }:
+{ env, ... }:
 {
   imports = [
     ./pkg.nix
@@ -15,16 +15,15 @@
   };
 
   home = {
-    username = username;
-    homeDirectory = "/home/${username}";
+    username = env.username;
+    homeDirectory = env.home;
     sessionPath = [
-      "$HOME/.local/bin"
+      env.bin
     ];
     sessionVariables = {
-      PNPM_HOME = "/home/${username}/.local/bin";
+      PNPM_HOME = env.bin;
       NIXD_FLAGS = "--log=error";
-      DXVK_CONFIG_FILE = "/home/${username}/.config/dxvk.conf";
-      SSH_AUTH_SOCK = "/home/${username}/.bitwarden-ssh-agent.sock";
+      SSH_AUTH_SOCK = "${env.home}/.bitwarden-ssh-agent.sock";
     };
   };
 

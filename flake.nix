@@ -34,15 +34,20 @@
     }@inputs:
     let
       inherit (self) outputs;
-      username = "sia";
-      backupFileExtension = "bak";
+      env = {
+        username = "sia";
+        home = "/home/${env.username}";
+        bin = "${env.home}/.local/bin";
+        nix = "${env.home}/.config/nixos";
+        backupFileExtension = "bak";
+      };
     in
     {
       nixosConfigurations = {
 
         Calla = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs outputs env;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -51,14 +56,9 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit
-                    inputs
-                    outputs
-                    username
-                    backupFileExtension
-                    ;
+                  inherit inputs outputs env;
                 };
-                users.sia.imports = [
+                users.${env.username}.imports = [
                   ./usr/share/home.nix
                   ./usr/calla/home.nix
                   catppuccin.homeModules.catppuccin
@@ -70,7 +70,7 @@
 
         Flint = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs outputs env;
           };
           modules = [
             ./sys/share/configuration.nix
@@ -79,14 +79,9 @@
             {
               home-manager = {
                 extraSpecialArgs = {
-                  inherit
-                    inputs
-                    outputs
-                    username
-                    backupFileExtension
-                    ;
+                  inherit inputs outputs env;
                 };
-                users.sia.imports = [
+                users.${env.username}.imports = [
                   ./usr/share/home.nix
                   ./usr/flint/home.nix
                   catppuccin.homeModules.catppuccin
