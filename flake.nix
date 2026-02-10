@@ -2,7 +2,7 @@
   description = "Sia's NixOS configuration";
   inputs = {
     # Catppuccin colors
-    catppuccin.url = "github:catppuccin/nix/release-25.05";
+    catppuccin.url = "github:catppuccin/nix/release-25.11";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.11";
