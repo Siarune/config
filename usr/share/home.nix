@@ -1,9 +1,10 @@
-{ env, ... }:
+{ inputs, env, ... }:
 {
   imports = [
     ./pkg.nix
     ./sh.nix
     ./plasma.nix
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   nixpkgs = {

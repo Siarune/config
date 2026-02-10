@@ -29,7 +29,6 @@
       self,
       nixpkgs,
       home-manager,
-      catppuccin,
       ...
     }@inputs:
     let
@@ -41,17 +40,21 @@
         nix = "${env.home}/.config/nixos";
         backupFileExtension = "bak";
       };
+      Systems = [
+        "Calla"
+        "Flint"
+      ];
     in
     {
-      nixosConfigurations = {
-
-        Calla = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = nixpkgs.lib.genAttrs Systems (
+        System:
+        nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs env;
           };
           modules = [
             ./sys/share/configuration.nix
-            ./sys/calla/configuration.nix
+            ./sys/${nixpkgs.lib.strings.toLower System}/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -60,37 +63,14 @@
                 };
                 users.${env.username}.imports = [
                   ./usr/share/home.nix
-                  ./usr/calla/home.nix
-                  catppuccin.homeModules.catppuccin
+                  ./usr/${nixpkgs.lib.strings.toLower System}/home.nix
                 ];
               };
             }
           ];
-        };
+        }
+      );
 
-        Flint = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs env;
-          };
-          modules = [
-            ./sys/share/configuration.nix
-            ./sys/flint/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = {
-                  inherit inputs outputs env;
-                };
-                users.${env.username}.imports = [
-                  ./usr/share/home.nix
-                  ./usr/flint/home.nix
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
-            }
-          ];
-        };
-      };
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
     };
