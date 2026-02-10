@@ -1,10 +1,6 @@
 { ... }:
 {
-
-  imports = [
-    ./pkg.nix
-  ];
-
+  imports = [ ];
   home.stateVersion = "25.05";
 
 }

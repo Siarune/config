@@ -7,6 +7,10 @@
 }:
 {
 
+  imports = [
+    ./config.nix
+  ];
+
   nix =
     let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
@@ -26,7 +30,7 @@
 
   networking.networkmanager.enable = true;
   networking.useDHCP = lib.mkDefault true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = lib.mkDefault true;
 
   services.openssh = {
     enable = true;

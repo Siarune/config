@@ -53,8 +53,8 @@
             inherit inputs outputs env;
           };
           modules = [
-            ./sys/share/configuration.nix
-            ./sys/${nixpkgs.lib.strings.toLower System}/configuration.nix
+            ./sys/share/core.nix
+            ./sys/${nixpkgs.lib.strings.toLower System}/core.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {

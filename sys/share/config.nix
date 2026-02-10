@@ -5,11 +5,6 @@
   ...
 }:
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    ./core.nix
-  ];
-
   nixpkgs = {
     overlays = [
       inputs.millennium.overlays.default
@@ -27,7 +22,7 @@
   };
 
   users.users = {
-    sia = {
+    "${env.username}" = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [ ];
       extraGroups = [

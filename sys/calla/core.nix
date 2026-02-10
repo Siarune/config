@@ -8,6 +8,7 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./configuration.nix
   ];
 
   boot = {
@@ -74,7 +75,8 @@
   };
 
   networking.hostName = "Calla";
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  system.stateVersion = "25.05";
 }

@@ -1,10 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-
-  imports = [
-    ./hardware.nix
-
-  ];
 
   services.hardware.openrgb = {
     enable = true;
@@ -16,7 +11,5 @@
     enable = true;
     openFirewall = true;
   };
-
-  system.stateVersion = "25.05";
 
 }
