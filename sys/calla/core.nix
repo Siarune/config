@@ -8,13 +8,16 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./configuration.nix
+    ./config.nix
   ];
 
   boot = {
     loader.systemd-boot.enable = true;
-    # kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
-    kernelModules = [ "kvm-amd" ];
+    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+    kernelModules = [
+      "kvm-amd"
+      "ntsync"
+    ];
     extraModulePackages = [ ];
 
     initrd = {

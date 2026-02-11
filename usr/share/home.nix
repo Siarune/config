@@ -25,6 +25,7 @@
       PNPM_HOME = env.bin;
       NIXD_FLAGS = "--log=error";
       SSH_AUTH_SOCK = "${env.home}/.bitwarden-ssh-agent.sock";
+      PROTON_USE_NTSYNC = 1;
     };
   };
 
