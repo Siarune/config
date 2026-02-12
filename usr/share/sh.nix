@@ -48,6 +48,8 @@
         keys.normal = {
           space.w = ":w";
           space.q = ":q";
+          space.m = ":bn";
+          space.n = ":bp";
         };
         editor = {
           line-number = "relative";
