@@ -33,7 +33,6 @@
     {
       self,
       nixpkgs,
-      home-manager,
       ...
     }@inputs:
     let
@@ -60,7 +59,7 @@
           modules = [
             ./sys/share/core.nix
             ./sys/${nixpkgs.lib.strings.toLower System}/core.nix
-            home-manager.nixosModules.home-manager
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
                 extraSpecialArgs = {

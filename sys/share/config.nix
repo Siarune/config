@@ -9,7 +9,7 @@
     overlays = [
       inputs.millennium.overlays.default
       (final: prev: {
-        catppuccin-kde-custom = final.catppuccin-kde.override {
+        katppuccin = final.catppuccin-kde.override {
           flavour = [ "mocha" ];
           accents = [ "lavender" ];
           winDecStyles = [ "classic" ];
@@ -38,7 +38,7 @@
         "docker"
       ];
       packages = with pkgs; [
-        catppuccin-kde-custom
+        katppuccin
         pinentry-qt
         appimage-run
         nixd
