@@ -16,6 +16,9 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
+    # Unstable
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # Plasma Manager
     plasma-manager = {
       url = "github:nix-community/plasma-manager";

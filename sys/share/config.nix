@@ -15,6 +15,12 @@
           winDecStyles = [ "classic" ];
         };
       })
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = final.system;
+          config.allowUnfree = true;
+        };
+      })
     ];
     config = {
       allowUnfree = true;
@@ -38,6 +44,7 @@
         nixd
         package-version-server
         nixfmt-rfc-style
+        unstable.stoat-desktop
       ];
       shell = pkgs.nushell;
     };

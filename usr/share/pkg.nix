@@ -11,7 +11,6 @@
   home.packages = with pkgs; [
     bottom
     vesktop
-    revolt-desktop
 
     pnpm
     nodejs

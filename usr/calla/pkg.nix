@@ -6,7 +6,6 @@
     prismlauncher
     temurin-bin-21
     ryubing
-    heroic
 
     obs-studio
     qbittorrent
