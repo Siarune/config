@@ -65,16 +65,6 @@
       fsType = "auto";
     };
 
-    "/mnt/s1" = {
-      device = "/dev/disk/by-label/s1";
-      fsType = "ext4";
-    };
-
-    "/mnt/s2" = {
-      device = "/dev/disk/by-label/s2";
-      fsType = "ext4";
-    };
-
   };
 
   networking.hostName = "Calla";
