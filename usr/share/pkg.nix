@@ -17,6 +17,7 @@
     oxlint
     unrar
     zed-editor
+    tinymist
 
     # Productivity
     anki
@@ -28,7 +29,6 @@
     mpv
     ungoogled-chromium
     firefoxpwa
-    bitwarden-desktop
   ];
 
   programs = {
@@ -64,6 +64,7 @@
     zen-browser = {
       enable = true;
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
+      suppressXdgMigrationWarning = true;
       policies = {
         DisableAppUpdate = true;
         NoDefaultBookmarks = true;
