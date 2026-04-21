@@ -24,7 +24,7 @@
     sessionVariables = {
       PNPM_HOME = env.bin;
       NIXD_FLAGS = "--log=error";
-      SSH_AUTH_SOCK = "${env.home}/.bitwarden-ssh-agent.sock";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/rbw/ssh-agent-socket";
       PROTON_USE_NTSYNC = 1;
     };
   };

@@ -53,6 +53,14 @@
     delta.enable = true;
     gitui.enable = true;
 
+    rbw = {
+      enable = true;
+      settings = {
+        email = "asharp@rune.nz";
+        pinentry = pkgs.pinentry-qt;
+      };
+    };
+
     zen-browser = {
       enable = true;
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
