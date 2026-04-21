@@ -53,6 +53,7 @@
 
       effects.minimization.animation = "squash";
       effects.wobblyWindows.enable = true;
+      effects.hideCursor.hideOnTyping = true;
 
       nightLight = {
         enable = true;
