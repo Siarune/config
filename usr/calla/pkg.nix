@@ -3,17 +3,12 @@
 
   home.packages = with pkgs; [
     lutris
-    prismlauncher
-    temurin-bin-21
     ryubing
+    grayjay
 
     obs-studio
-    qbittorrent
+    inkscape
     tor-browser
-
-    sabnzbd
-    sonarr
-    radarr
   ];
 
 }

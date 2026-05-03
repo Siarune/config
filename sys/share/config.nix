@@ -44,7 +44,6 @@
         nixd
         package-version-server
         nixfmt-rfc-style
-        unstable.stoat-desktop
       ];
       shell = pkgs.nushell;
     };

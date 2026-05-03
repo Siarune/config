@@ -10,12 +10,9 @@
 
   home.packages = with pkgs; [
     bottom
-    vesktop
-
     pnpm
     nodejs
     oxlint
-    unrar
     zed-editor
     tinymist
 
@@ -24,11 +21,8 @@
     calibre
     krita
     libreoffice-qt6-fresh
-    zotero
     obsidian
     mpv
-    ungoogled-chromium
-    firefoxpwa
   ];
 
   programs = {

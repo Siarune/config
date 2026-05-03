@@ -1,8 +1,9 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
 
   services.hardware.openrgb = {
     enable = true;
+    package = pkgs.unstable.openrgb;
   };
 
   virtualisation.docker.enable = true;
