@@ -13,7 +13,7 @@
 
   boot = {
     loader.systemd-boot.enable = true;
-    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-bore;
     kernelModules = [
       "kvm-amd"
       "ntsync"
