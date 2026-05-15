@@ -6,6 +6,8 @@
     package = pkgs.unstable.openrgb;
   };
 
+  programs.partition-manager.enable = true;
+
   virtualisation.docker.enable = true;
 
   services.jellyfin = {
