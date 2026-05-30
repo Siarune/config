@@ -2,12 +2,13 @@
 {
 
   home.packages = with pkgs; [
-    lutris
-    ryubing
+    calibre
+    freecad
     grayjay
-
-    obs-studio
     inkscape
+    krita
+    lutris
+    obs-studio
     tor-browser
   ];
 

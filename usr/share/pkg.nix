@@ -9,20 +9,14 @@
   ];
 
   home.packages = with pkgs; [
-    bottom
-    pnpm
-    nodejs
-    oxlint
-    zed-editor
-    tinymist
-
-    # Productivity
     anki
-    calibre
-    krita
+    bottom
     libreoffice-qt6-fresh
-    obsidian
     mpv
+    obsidian
+    oxlint
+    pnpm
+    zed-editor
   ];
 
   programs = {
@@ -57,7 +51,7 @@
 
     zen-browser = {
       enable = true;
-      nativeMessagingHosts = [ pkgs.firefoxpwa ];
+      nativeMessagingHosts = [ ];
       policies = {
         DisableAppUpdate = true;
         NoDefaultBookmarks = true;

@@ -5,6 +5,17 @@
   ...
 }:
 {
+
+  imports = [
+    inputs.catppuccin.nixosModules.catppuccin
+  ];
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "lavender";
+  };
+
   nixpkgs = {
     overlays = [
       inputs.millennium.overlays.default
@@ -24,6 +35,7 @@
     ];
     config = {
       allowUnfree = true;
+      allowUnfreePrefix = "_";
     };
   };
 
@@ -44,12 +56,13 @@
         nixd
         package-version-server
         nixfmt-rfc-style
+        unstable.nodejs_26
       ];
       shell = pkgs.nushell;
     };
   };
 
-  programs.adb.enable = true;
+  # programs.adb.enable = true;
 
   programs.steam = {
     enable = true;
